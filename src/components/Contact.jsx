@@ -44,7 +44,7 @@ const Contact = () => {
       <img src="./mail.svg" alt="mail" />
       <div className="copy">
         <h1>GET IN TOUCH</h1>
-        <form onSubmit={handleSubmit}>
+        <form>
           <input
             name="name"
             type="text"
@@ -66,7 +66,7 @@ const Contact = () => {
             onChange={handleChange}
           />
 
-          <button>
+          <button onClick={handleSubmit}>
             Send <i class="fas fa-paper-plane"></i>
           </button>
         </form>
