@@ -21,7 +21,8 @@ const Contact = () => {
       .join('&');
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = e => {
+    e.preventDefault();
     setLoading(true);
     axios
       .post('/', {
