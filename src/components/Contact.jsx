@@ -45,7 +45,7 @@ const Contact = () => {
       <img src="./mail.svg" alt="mail" />
       <div className="copy">
         <h1>GET IN TOUCH</h1>
-        <form>
+        <form netlify>
           <input
             name="name"
             type="text"
