@@ -46,6 +46,7 @@ const Contact = () => {
       <div className="copy">
         <h1>GET IN TOUCH</h1>
         <form netlify>
+          <input type="hidden" name="form-name" value="contact" />
           <input
             name="name"
             type="text"
@@ -55,7 +56,7 @@ const Contact = () => {
           />
           <input
             name="email"
-            type="text"
+            type="email"
             placeholder="Email Address"
             value={formValues.email}
             onChange={handleChange}

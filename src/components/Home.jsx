@@ -1,6 +1,6 @@
 import React from 'react';
 import Model from './Model';
-import { Canvas, extend } from 'react-three-fiber';
+import { Canvas } from 'react-three-fiber';
 
 import Controls from './Controls';
 import Headline from './Headline';
