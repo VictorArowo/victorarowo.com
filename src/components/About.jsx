@@ -7,7 +7,8 @@ const About = () => {
       <img src="./headshot.jpg" alt="profile" />
       <div className="copy">
         I'm <span className="name">Victor Arowo</span>, <br /> a software
-        developer building <br /> user-focused experiences.
+        developer currently in Nigeria, building <br /> user-focused
+        experiences.
       </div>
     </Div>
   );
@@ -20,6 +21,7 @@ const Div = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-family: 'Varela Round', sans-serif;
 
   img {
     height: 500px;
@@ -28,9 +30,9 @@ const Div = styled.div`
   }
 
   .copy {
-    width: 700px;
+    width: 800px;
     font-size: 80px;
-    color: #6b2737;
+    color: #333;
   }
 
   .name {

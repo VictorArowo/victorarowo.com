@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import Spinner from './Spinner';
 
 const Contact = () => {
   const [formValues, setFormValues] = useState({
@@ -9,7 +10,8 @@ const Contact = () => {
     message: ''
   });
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const [failure, setFailure] = useState(false);
 
   const handleChange = event => {
     setFormValues({ ...formValues, [event.target.name]: event.target.value });
@@ -23,6 +25,8 @@ const Contact = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    setSuccess(false);
+    setFailure(false);
     setLoading(true);
     axios
       .post('/', encode({ 'form-name': 'contact', ...formValues }), {
@@ -31,10 +35,16 @@ const Contact = () => {
       .then(() => {
         setSuccess(true);
         setLoading(false);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 1500);
       })
       .catch(() => {
-        setSuccess(false);
+        setFailure(true);
         setLoading(false);
+        setTimeout(() => {
+          setFailure(false);
+        }, 1500);
       });
   };
 
@@ -67,8 +77,16 @@ const Contact = () => {
           />
 
           <button onClick={handleSubmit}>
-            Send <i class="fas fa-paper-plane"></i>
+            {!loading ? (
+              <span style={{ color: '#333' }}>
+                Send <i className="fas fa-paper-plane"></i>
+              </span>
+            ) : (
+              <Spinner />
+            )}
           </button>
+          {success && <div className="success">Message sent successfully</div>}
+          {failure && <div className="failure">Something went wrong</div>}
         </form>
       </div>
     </Div>
@@ -83,6 +101,7 @@ const Div = styled.div`
   align-items: center;
   justify-content: space-around;
   scroll-snap-align: start;
+  font-family: 'Varela Round', sans-serif;
 
   .copy {
     display: flex;
@@ -94,7 +113,7 @@ const Div = styled.div`
 
     h1 {
       font-size: 40px;
-      color: white;
+      color: #333;
     }
   }
 
@@ -104,7 +123,7 @@ const Div = styled.div`
     margin-top: 50px;
     width: 100%;
 
-    input[type='text'] {
+    input {
       height: 40px;
       border-radius: 20px;
       border: none;
@@ -167,6 +186,32 @@ const Div = styled.div`
   img {
     width: 600px;
     object-fit: cover;
+  }
+
+  .success {
+    margin: auto;
+    margin-top: 30px;
+    width: 80%;
+    color: #3ad29f;
+    background-color: #333;
+    font-size: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .failure {
+    margin: auto;
+    margin-top: 30px;
+    width: 80%;
+    color: red;
+    background-color: #333;
+    font-size: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

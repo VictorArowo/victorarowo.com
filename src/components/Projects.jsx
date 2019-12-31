@@ -82,7 +82,8 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   scroll-snap-align: start;
-  color: black;
+  color: #333;
+  font-family: 'Varela Round', sans-serif;
 
   .hvrbox {
     position: relative;
@@ -146,7 +147,7 @@ const Div = styled.div`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 0 15vw;
+    margin: 0 10vw;
   }
 
   .hvrbox:hover > img {
@@ -155,13 +156,13 @@ const Div = styled.div`
   }
 
   .projects {
-    width: 500px;
+    width: 400px;
     object-fit: cover;
   }
 
   .header {
     text-align: center;
-    font-size: 50px;
+    font-size: 90px;
     color: black;
   }
 
