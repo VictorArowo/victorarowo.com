@@ -81,7 +81,12 @@ const Contact = () => {
             onChange={handleChange}
           />
 
-          <button onClick={handleSubmit}>
+          <button
+            onClick={handleSubmit}
+            disabled={
+              !(formValues.email && formValues.name && formValues.message)
+            }
+          >
             {!loading ? (
               <span style={{ color: '#333' }}>
                 Send <i className="fas fa-paper-plane"></i>
@@ -93,6 +98,36 @@ const Contact = () => {
           {success && <div className="success">Message sent successfully</div>}
           {failure && <div className="failure">Something went wrong</div>}
         </form>
+        <div className="socials">
+          <a
+            href="http://www.github.com/VictorArowo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="http://www.twitter.com/ArowoV"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/victor-arowo/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="mailto:arowov@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
     </Div>
   );
@@ -185,6 +220,11 @@ const Div = styled.div`
         opacity: 0.7;
         cursor: pointer;
       }
+
+      &:disabled {
+        opacity: 0.8;
+        cursor: not-allowed;
+      }
     }
   }
 
@@ -217,6 +257,18 @@ const Div = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .socials {
+    margin-top: auto;
+    font-size: 50px;
+    * {
+      margin: 20px;
+      color: #6c63ff;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
   }
 `;
 
