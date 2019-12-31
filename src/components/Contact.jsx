@@ -28,7 +28,7 @@ const Contact = () => {
       .post('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'portfolio', ...formValues })
+        body: encode({ 'form-name': 'contact', ...formValues })
       })
       .then(() => {
         setSuccess(true);
