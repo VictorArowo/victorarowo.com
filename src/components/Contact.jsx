@@ -35,6 +35,11 @@ const Contact = () => {
       .then(() => {
         setSuccess(true);
         setLoading(false);
+        setFormValues({
+          name: '',
+          email: '',
+          message: ''
+        });
         setTimeout(() => {
           setSuccess(false);
         }, 1500);
