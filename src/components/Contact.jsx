@@ -25,10 +25,8 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contact', ...formValues })
+      .post('/', encode({ 'form-name': 'contact', ...formValues }), {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       })
       .then(() => {
         setSuccess(true);
