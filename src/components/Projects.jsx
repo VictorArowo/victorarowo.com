@@ -146,7 +146,7 @@ const Div = styled.div`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    /* margin: 0 15vw; */
+    margin: 0 15vw;
   }
 
   .hvrbox:hover > img {

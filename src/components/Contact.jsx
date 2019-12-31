@@ -80,10 +80,10 @@ const Div = styled.div`
   height: 100vh;
   padding-top: 50px;
   background-color: #44ccff;
-  scroll-snap-align: start;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  scroll-snap-align: start;
 
   .copy {
     display: flex;
