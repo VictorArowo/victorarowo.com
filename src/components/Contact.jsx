@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import Spinner from './Spinner';
+import { mobilePortrait, tabletPortrait } from '../styles/themes';
 
 const Contact = () => {
   const [formValues, setFormValues] = useState({
@@ -142,6 +143,9 @@ const Div = styled.div`
   justify-content: space-around;
   scroll-snap-align: start;
   font-family: 'Varela Round', sans-serif;
+  @media ${mobilePortrait} {
+    flex-direction: column;
+  }
 
   .copy {
     display: flex;
@@ -151,6 +155,15 @@ const Div = styled.div`
     width: 30%;
     text-align: center;
 
+    @media ${mobilePortrait} {
+      margin-top: -120px;
+      width: 100%;
+    }
+
+    @media ${tabletPortrait} {
+      margin-top: -120px;
+      width: 80%;
+    }
     h1 {
       font-size: 40px;
       color: #333;
@@ -162,12 +175,19 @@ const Div = styled.div`
     flex-direction: column;
     margin-top: 50px;
     width: 100%;
+    @media ${mobilePortrait} {
+      height: 100%;
+      margin-top: -20px;
 
+      input {
+        height: 100px;
+      }
+    }
     input {
       height: 40px;
       border-radius: 20px;
       border: none;
-      padding: 0 20px;
+      padding: 20px 20px;
       margin: 10px;
       &::-webkit-input-placeholder {
         font-size: 16px;
@@ -215,7 +235,9 @@ const Div = styled.div`
       font-weight: bold;
       transition: 0.5s opacity;
       width: 70%;
-
+      @media ${mobilePortrait} {
+        height: 40px;
+      }
       &:hover {
         opacity: 0.7;
         cursor: pointer;
@@ -231,6 +253,12 @@ const Div = styled.div`
   img {
     width: 600px;
     object-fit: cover;
+    @media ${mobilePortrait} {
+      display: none;
+    }
+    @media ${tabletPortrait} {
+      display: none;
+    }
   }
 
   .success {
@@ -262,8 +290,12 @@ const Div = styled.div`
   .socials {
     margin-top: auto;
     font-size: 50px;
+    @media ${mobilePortrait} {
+      margin-top: 50px;
+      font-size: 30px;
+    }
     * {
-      margin: 20px;
+      margin: 10px;
       color: #6c63ff;
       &:hover {
         opacity: 0.7;

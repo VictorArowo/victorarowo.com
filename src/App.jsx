@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <Home />
-      <About />
+      {/* <About /> */}
       <Projects />
       <Loader />
       <Contact />
