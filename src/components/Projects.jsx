@@ -11,17 +11,13 @@ const Projects = () => {
           <img
             src="./projects/Devdesk.png"
             alt="devdesk"
-            className="projects hvrbox-layer_bottom"
+            className="projects"
           />
 
           <h3>Ticket Managing Solution</h3>
         </div>
         <div className="project hvrbox">
-          <img
-            src="./projects/ar.png"
-            alt="devdesk"
-            className="projects hvrbox-layer_bottom"
-          />
+          <img src="./projects/ar.png" alt="devdesk" className="projects" />
 
           <h3>
             Augmented Reality <br /> Microfabrication Laboratory
@@ -31,7 +27,7 @@ const Projects = () => {
           <img
             src="./projects/RuralSchool.png"
             alt="devdesk"
-            className="projects hvrbox-layer_bottom"
+            className="projects"
           />
 
           <h3>
@@ -42,7 +38,7 @@ const Projects = () => {
           <img
             src="./projects/Devdesk.png"
             alt="devdesk"
-            className="projects hvrbox-layer_bottom"
+            className="projects"
           />
 
           <h3>Devdesk Queue</h3>
