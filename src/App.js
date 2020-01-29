@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Main from "./components/Main";
+import styled from "styled-components";
+import { extend } from "react-three-fiber";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { Canvas } from "react-three-fiber";
+import Controls from "./components/Controls";
+import Model from "./components/Model";
+
+extend({ OrbitControls });
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Div className="App">
+      <Canvas camera={{ position: [0, 0, 15] }} shadowMap>
+        <ambientLight intensity={1.5} />
+        <pointLight intensity={2} position={[-10, -25, -10]} />
+        <spotLight
+          castShadow
+          intensity={1.25}
+          angle={Math.PI / 8}
+          position={[25, 25, 15]}
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+        />
+        <Controls
+          autoRotate
+          enablePan={false}
+          enableZoom={false}
+          enableDamping
+          dampingFactor={0.5}
+          rotateSpeed={1.5}
+        />
+        <Model />
+      </Canvas>
+
+      <Main className="main" />
+    </Div>
   );
 }
+
+const Div = styled.div`
+  background-color: #5a5d94;
+
+  .main {
+    display: fixed;
+    border: 2px solid red;
+  }
+`;
 
 export default App;
