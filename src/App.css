@@ -19,13 +19,13 @@ canvas {
 }
 
 .ant-tabs-nav .ant-tabs-tab-active {
-  color: #f43517;
+  color: #f43517 !important;
 }
 .ant-tabs-nav .ant-tabs-tab:hover {
-  color: #f8f8ff;
+  color: #f8f8ff !important;
 }
 
 div.ant-tabs-tab {
-  color: white;
-  font-family: "Montserrat", sans-serif;
+  color: white !important;
+  font-family: "Montserrat", sans-serif !important;
 }
