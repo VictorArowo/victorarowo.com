@@ -17,3 +17,15 @@ html,
 canvas {
   height: 100vh;
 }
+
+.ant-tabs-nav .ant-tabs-tab-active {
+  color: #f43517;
+}
+.ant-tabs-nav .ant-tabs-tab:hover {
+  color: #f8f8ff;
+}
+
+div.ant-tabs-tab {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}

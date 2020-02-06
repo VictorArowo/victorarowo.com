@@ -5,9 +5,22 @@ import {
   FaArrowDown,
   FaArrowLeft,
   FaArrowRight,
-  FaArrowUp
+  FaArrowUp,
+  FaGithub,
+  FaGlobeAfrica,
+  FaTwitter,
+  FaLinkedin
 } from "react-icons/fa";
 import { HorizontalBar } from "react-chartjs-2";
+import Flippy, { FrontSide, BackSide } from "react-flippy";
+import "react-tabs/style/react-tabs.css";
+import { Tag, Tabs } from "antd";
+import {
+  mobilePortrait,
+  tabletPortrait,
+  smallLaptop
+} from "../styles/breakpoints";
+const { TabPane } = Tabs;
 
 const Main = () => {
   const [page, setPage] = useState(0);
@@ -103,6 +116,12 @@ const Main = () => {
     }
   };
 
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <>
       <Div style={contentProps}>
@@ -131,32 +150,238 @@ const Main = () => {
               color="#f43517"
             />
           </div>
+          <div className="links">
+            <p>
+              <a href="mailto:arowov@gmail.com" target="_top" className="email">
+                arowov@gmail.com
+              </a>
+            </p>
+            <div class="socials">
+              <a
+                href="https://twitter.com/ArowoV"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://linkedin.com/in/victor-arowo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://github.com/VictorArowo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub />
+              </a>
+            </div>
+          </div>
         </div>
       </Div>
 
       <Projects style={projects}>
         <div className="top">
           <h1 className="header">FEATURED</h1>
+          <Tabs defaultActiveKey="1" style={{ marginTop: "20px" }}>
+            <TabPane tab="Applications" key="1">
+              <div className="projects">
+                <div className="project">
+                  <Flippy
+                    flipOnHover={true}
+                    flipOnClick={false}
+                    flipDirection="horizontal"
+                  >
+                    <FrontSide>
+                      <h3>DevDesk Queue</h3>
+                      <img src="projects/Devdesk.png" />
+                    </FrontSide>
+                    <BackSide>
+                      <h3>DevDesk Queue</h3>
+                      <p style={{ color: "#f8f8ff" }}>
+                        A ticket logging and tracking app, built to be used in
+                        educational institutions. Has an accompanying slackbot
+                        for a better user experience.
+                      </p>
+                      {["React", "Node.JS", "PostgreSQL"].map((elem, idx) => {
+                        return (
+                          <Tag key={idx} closable={false}>
+                            {elem}
+                          </Tag>
+                        );
+                      })}
+                      <div
+                        className="links"
+                        style={{
+                          color: "#f8f8ff",
+                          fontSize: "38px",
+                          width: "40%",
+                          display: "flex",
+                          justifyContent: "space-around",
+                          margin: "auto",
+                          marginTop: "10px"
+                        }}
+                      >
+                        <FaGithub />
+                        <FaGlobeAfrica />
+                      </div>
+                    </BackSide>
+                  </Flippy>
+                </div>
+                <div className="project">
+                  <Flippy
+                    flipOnHover={true}
+                    flipOnClick={false}
+                    flipDirection="horizontal"
+                  >
+                    <FrontSide>
+                      <h3>Intl. Rural School</h3>
+                      <img src="projects/RuralSchool.png" />
+                    </FrontSide>
+                    <BackSide style={{ color: "#f43517" }}>
+                      <h3>Intl. Rural School</h3>
+                      <p style={{ color: "#f8f8ff" }}>
+                        An infrastructure management app for small schools that
+                        need assistance from foreign organizations.
+                      </p>
+                      {["React", "Node.JS", "PostgreSQL"].map((elem, idx) => {
+                        return (
+                          <Tag key={idx} closable={false}>
+                            {elem}
+                          </Tag>
+                        );
+                      })}
+                      <div
+                        className="links"
+                        style={{
+                          color: "#f8f8ff",
+                          fontSize: "38px",
+                          width: "40%",
+                          display: "flex",
+                          justifyContent: "space-around",
+                          margin: "auto",
+                          marginTop: "10px"
+                        }}
+                      >
+                        <FaGithub />
+                        <FaGlobeAfrica />
+                      </div>
+                    </BackSide>
+                  </Flippy>
+                </div>
+                <div className="project">
+                  <Flippy
+                    flipOnHover={true}
+                    flipOnClick={false}
+                    flipDirection="horizontal"
+                  >
+                    <FrontSide>
+                      <h3>AR Lab</h3>
+                      <img src="projects/ar.png" />
+                    </FrontSide>
+                    <BackSide style={{ color: "#f43517" }}>
+                      <h3>Ticket Managing Tool</h3>
+                    </BackSide>
+                  </Flippy>
+                </div>{" "}
+                <div className="project">
+                  <Flippy
+                    flipOnHover={true}
+                    flipOnClick={false}
+                    flipDirection="horizontal"
+                  >
+                    <FrontSide>
+                      <h3>Lambda Door</h3>
+                      <img src="projects/LambdaDoor.png" />
+                    </FrontSide>
+                    <BackSide style={{ color: "#f43517" }}>
+                      <h3>Lambda Door</h3>
+                      <p style={{ color: "#f8f8ff" }}>
+                        An all-in-one job portal geared towards Lambda School
+                        students looking for jobs. Lambda School students can
+                        post reviews about jobs and interview processes.
+                      </p>
+                      {["React", "Node.JS", "PostgreSQL"].map((elem, idx) => {
+                        return (
+                          <Tag key={idx} closable={false}>
+                            {elem}
+                          </Tag>
+                        );
+                      })}
+                      <div
+                        className="links"
+                        style={{
+                          color: "#f8f8ff",
+                          fontSize: "38px",
+                          width: "40%",
+                          display: "flex",
+                          justifyContent: "space-around",
+                          margin: "auto",
+                          marginTop: "10px"
+                        }}
+                      >
+                        <FaGithub />
+                        <FaGlobeAfrica />
+                      </div>
+                    </BackSide>
+                  </Flippy>
+                </div>
+              </div>
+            </TabPane>
+
+            <TabPane tab="Open-source Libraries" key="2">
+              <div className="projects">
+                <div className="project">
+                  <Flippy
+                    flipOnHover={true}
+                    flipOnClick={false}
+                    flipDirection="horizontal"
+                  >
+                    <FrontSide>
+                      <h3>Consim</h3>
+                      <img src="projects/JS.png" />
+                    </FrontSide>
+                    <BackSide style={{ color: "#f43517" }}>
+                      <h3>Consim</h3>
+                      <p style={{ color: "#f8f8ff" }}>
+                        A utility for node.js and the browser which offers more
+                        control over how asynchronous functions are invoked on
+                        elements of an array.
+                      </p>
+                      {["Javascript"].map((elem, idx) => {
+                        return (
+                          <Tag key={idx} closable={false}>
+                            {elem}
+                          </Tag>
+                        );
+                      })}
+                      <div
+                        className="links"
+                        style={{
+                          color: "#f8f8ff",
+                          fontSize: "38px",
+                          width: "40%",
+                          display: "flex",
+                          justifyContent: "space-around",
+                          margin: "auto",
+                          marginTop: "10px"
+                        }}
+                      >
+                        <FaGithub />
+                        <FaGlobeAfrica />
+                      </div>
+                    </BackSide>
+                  </Flippy>
+                </div>
+              </div>
+            </TabPane>
+          </Tabs>
           <img src="logo.png" alt="logo" width="200" height="200" />
         </div>
-        <div className="projects">
-          <div className="project">
-            <img src="projects/Devdesk.png" width="300px" />
-            <h2>Ticket Managing Tool</h2>
-          </div>
-          <div className="project">
-            <img src="projects/Devdesk.png" width="300px" />
-            <h2>Ticket Managing Tool</h2>
-          </div>
-          <div className="project">
-            <img src="projects/Devdesk.png" width="300px" />
-            <h2>Ticket Managing Tool</h2>
-          </div>
-          <div className="project">
-            <img src="projects/Devdesk.png" width="300px" />
-            <h2>Ticket Managing Tool</h2>
-          </div>
-        </div>
+
         <div className="arrow">
           <FaArrowLeft
             className="bounce right"
@@ -173,10 +398,11 @@ const Main = () => {
           <img src="logo.png" alt="logo" width="200" height="200" />
         </div>
         <div className="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nobis
-          accusamus expedita, error magni pariatur temporibus sit ea mollitia
-          consectetur consequatur fuga quia iste quam id nostrum, numquam quas
-          necessitatibus?
+          Hi there, I'm a Nigerian Fullstack Developer and I enjoy making things
+          work. I primary build for the web using Javascript.
+          <br />
+          <br />
+          Let's get in touch :)
         </div>
         <div className="arrow">
           <FaArrowRight
@@ -228,13 +454,22 @@ const Div = styled(a.div)`
   }
   .tagline {
     /* margin-top: 20px; */
-    font-size: 45px;
+    font-size: 35px;
     font-family: "Montserrat", sans-serif;
     /* margin-left: 150px; */
     /* letter-spacing: 8px; */
     text-align: center;
     color: #f8f8ff;
 
+    @media ${mobilePortrait} {
+      font-size: 20px;
+    }
+    @media ${tabletPortrait} {
+      font-size: 22px;
+    }
+    @media ${smallLaptop} {
+      font-size: 25px;
+    }
     .horizontal {
       display: flex;
       justify-content: space-around;
@@ -244,7 +479,17 @@ const Div = styled(a.div)`
     .me {
       color: #f43517;
       font-family: "Montserrat", sans-serif;
-      font-size: 70px;
+      font-size: 50px;
+
+      @media ${mobilePortrait} {
+        font-size: 22px;
+      }
+      @media ${tabletPortrait} {
+        font-size: 25px;
+      }
+      @media ${smallLaptop} {
+        font-size: 30px;
+      }
     }
 
     .name {
@@ -499,15 +744,42 @@ const Div = styled(a.div)`
       left: 0;
     }
   }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    font-size: 30px;
+    color: #f43517;
+    align-items: center;
+    margin-top: 100px;
+
+    .email {
+      color: #f43517;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .socials {
+      * {
+        color: #f43517;
+        margin-right: 30px;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
 `;
 
 const Projects = styled(Div)`
-  padding-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding-top: 0;
+  font-family: "Montserrat", sans-serif;
 
   .top {
     width: 100%;
@@ -520,21 +792,26 @@ const Projects = styled(Div)`
     font-size: 20px;
     font-family: "Montserrat", sans-serif;
     color: #f43517;
+    height: 200px;
   }
   .projects {
-    padding-top: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 80%;
+    margin-left: 50px;
     justify-content: space-around;
   }
   .project {
-    width: 40%;
-    color: #999;
+    width: 45%;
+    margin-bottom: 20px;
+    color: #f43517;
 
+    img {
+      width: 300px;
+    }
     h2 {
       color: #f43517;
+      margin-top: 0;
     }
   }
 `;
@@ -549,6 +826,14 @@ const About = styled(Div)`
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    @media ${mobilePortrait} {
+      font-size: 16px;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
   }
 
   .header {
@@ -556,16 +841,22 @@ const About = styled(Div)`
     font-size: 20px;
     font-family: "Montserrat", sans-serif;
     color: #f43517;
+    @media ${mobilePortrait} {
+      font-size: 16px;
+    }
   }
   .content {
     width: 70%;
     font-family: "Montserrat", sans-serif;
     color: #f8f8ff;
     font-size: 30px;
+    @media ${mobilePortrait} {
+      font-size: 18px;
+    }
   }
 
   .arrow {
-    margin-top: 20%;
+    margin-top: 20px;
   }
 `;
 
@@ -576,11 +867,22 @@ const Skills = styled(Div)`
 
   .chart {
     width: 60%;
+    @media ${mobilePortrait} {
+      height: 80%;
+      font-size: 16px;
+    }
   }
   .top {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    @media ${mobilePortrait} {
+      font-size: 16px;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
   }
 
   .header {
@@ -588,6 +890,9 @@ const Skills = styled(Div)`
     font-size: 20px;
     font-family: "Montserrat", sans-serif;
     color: #f43517;
+    @media ${mobilePortrait} {
+      font-size: 16px;
+    }
   }
 `;
 
