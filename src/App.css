@@ -19,13 +19,30 @@ canvas {
 }
 
 .ant-tabs-nav .ant-tabs-tab-active {
-  color: #f43517 !important;
+  color: #f43517;
 }
 .ant-tabs-nav .ant-tabs-tab:hover {
-  color: #f8f8ff !important;
+  color: #f8f8ff;
 }
 
 div.ant-tabs-tab {
-  color: white !important;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  color: #f43517 !important;
+  font-weight: 900;
+}
+
+h3 {
+  color: #f43517 !important;
+}
+.tagline h1 {
+  font-size: 60px !important;
   font-family: "Montserrat", sans-serif !important;
+
+  text-align: center;
+  color: #f8f8ff !important;
+  margin-top: 20%;
 }

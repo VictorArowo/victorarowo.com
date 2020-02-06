@@ -454,12 +454,12 @@ const Div = styled(a.div)`
   }
   .tagline {
     /* margin-top: 20px; */
-    font-size: 35px;
-    font-family: "Montserrat", sans-serif;
+    font-size: 35px !important;
+    font-family: "Montserrat", sans-serif !important;
     /* margin-left: 150px; */
     /* letter-spacing: 8px; */
     text-align: center;
-    color: #f8f8ff;
+    color: #f8f8ff !important;
 
     @media ${mobilePortrait} {
       font-size: 20px;
@@ -752,7 +752,7 @@ const Div = styled(a.div)`
     font-size: 30px;
     color: #f43517;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 12%;
 
     .email {
       color: #f43517;
@@ -775,8 +775,8 @@ const Div = styled(a.div)`
 
 const Projects = styled(Div)`
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
+  flex-direction: column;
   align-items: center;
   padding-top: 0;
   font-family: "Montserrat", sans-serif;
