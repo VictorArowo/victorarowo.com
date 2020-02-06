@@ -156,7 +156,7 @@ const Main = () => {
                 arowov@gmail.com
               </a>
             </p>
-            <div class="socials">
+            <div className="socials">
               <a
                 href="https://twitter.com/ArowoV"
                 target="_blank"
