@@ -125,7 +125,7 @@ const Main = () => {
   return (
     <>
       <Div style={contentProps}>
-        <div class="column">
+        <div className="column">
           <div className="name">
             <img src="logo.png" alt="logo" width="200" height="200" />
           </div>

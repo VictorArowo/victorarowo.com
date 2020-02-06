@@ -7,7 +7,6 @@ import Loader from "./components/Loader";
 
 ReactDOM.render(
   <>
-    {" "}
     <Loader />
     <App />
   </>,
